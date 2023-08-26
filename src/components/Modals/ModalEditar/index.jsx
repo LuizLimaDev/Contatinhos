@@ -79,7 +79,11 @@ function ModalEditar({ openModalEdit, handleCloseModalEdit, currentContact, setR
         <Paper sx={{
           display: 'flex',
           flexDirection: 'column',
-          width: '494px',
+          width: {
+            xs: '400px',
+            sm: '420px',
+            md: '450px'
+          },
           pb: '74px',
         }}>
           <img

@@ -1,5 +1,5 @@
 import { useTheme } from '@emotion/react';
-import { Box, Container, Grid, Link, Paper, Typography } from '@mui/material';
+import { Box, Container, Grid, Link, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocalStorage } from 'react-use';
@@ -48,14 +48,18 @@ function LoginForm() {
   }, [value, navigate]);
 
   return (
-    <Grid item component={Paper} xs={6} square>
+    <Grid item xs={12} sm={6} square>
       <DefaultToast />
       <Container
         sx={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          width: '476px',
+          alignItems: 'center',
+          width: {
+            sm: '100vw',
+            md: '476px'
+          },
           height: '100%'
         }}
       >
@@ -77,9 +81,15 @@ function LoginForm() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            width: '100%',
+            width: {
+              xs: '70%',
+              sm: '70%',
+              md: '90%',
+              lg: '100%'
+            },
             mt: 1
           }}
+
           onSubmit={handleSubmit}
         >
           <TextFieldStyled

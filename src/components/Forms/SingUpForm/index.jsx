@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Grid, Link,
-  Paper,
   Typography
 } from '@mui/material';
 import { useState } from 'react';
@@ -64,13 +63,17 @@ function SingUpForm() {
   }
 
   return (
-    <Grid item component={Paper} xs={6} square >
+    <Grid item xs={12} sm={6} square >
       <Container
         sx={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          width: '476px',
+          alignItems: 'center',
+          width: {
+            sm: '100vw',
+            md: '476px'
+          },
           height: '100%'
         }}
       >
@@ -80,8 +83,14 @@ function SingUpForm() {
           sx={{
             display: 'flex',
             flexDirection: 'column',
+            justifyContent: 'center',
             alignItems: 'center',
-            width: '100%',
+            width: {
+              xs: '70%',
+              sm: '70%',
+              md: '90%',
+              lg: '100%'
+            },
             mt: 1
           }}
           onSubmit={handleSingin}

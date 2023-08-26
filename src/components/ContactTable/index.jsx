@@ -29,7 +29,7 @@ function TabelaContatos() {
   const [openModalDelete, setOpenModalDelete] = useState(false);
   const { getContacts } = useGetContacts();
   const [rows, setRows] = useState([])
-  const [currentContact, setCurrentContact] = useState([])
+  const [currentContact, setCurrentContact] = useState([]);
 
   const handleOpenModalEdit = () => setOpenModalEdit(true);
   const handleCloseModalEdit = () => setOpenModalEdit(false);
@@ -78,6 +78,12 @@ function TabelaContatos() {
 
   return (
     <Container maxWidth='md'>
+      <ModalAddContact
+        openModal={openModalAddContact}
+        handleCloseModal={handleCloseModalAddContact}
+        setModal={setOpenModalAddContact}
+        setRows={setRows}
+      />
       <Button
         variant="contained"
         type="button"
@@ -94,12 +100,6 @@ function TabelaContatos() {
       >
         Adicionar
       </Button>
-      <ModalAddContact
-        openModal={openModalAddContact}
-        handleCloseModal={handleCloseModalAddContact}
-        setModal={setOpenModalAddContact}
-        setRows={setRows}
-      />
       <TableContainer component={Paper} sx={{ marginTop: '36px' }}>
         <Table>
           <TableHead sx={{ backgroundColor: `${theme.color.gray200}` }}>
@@ -118,24 +118,26 @@ function TabelaContatos() {
                   <TableCell>{row.email}</TableCell>
                   <TableCell>{row.telefone}</TableCell>
                   <TableCell align="right">
-                    <img
-                      src={editContact}
-                      alt="editar contato"
-                      style={{ marginRight: '16px' }}
-                      onClick={() => handleEditContact(row)}
-                    />
                     <ModalEditar
                       openModalEdit={openModalEdit}
                       handleCloseModalEdit={handleCloseModalEdit}
                       currentContact={currentContact}
                       setRows={setRows}
                     />
-                    <img
-                      src={deleteContact}
-                      alt="deletar contato"
-                      style={{ marginRight: '32px' }}
-                      onClick={() => handleOpenConfirmDelete(row)}
-                    />
+                    <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+                      <img
+                        src={editContact}
+                        alt="editar contato"
+                        style={{ marginRight: '16px' }}
+                        onClick={() => handleEditContact(row)}
+                      />
+                      <img
+                        src={deleteContact}
+                        alt="deletar contato"
+                        style={{ marginRight: '32px' }}
+                        onClick={() => handleOpenConfirmDelete(row)}
+                      />
+                    </div>
                     <ModalDelete
                       openModal={openModalDelete}
                       handleCloseModal={handleCloseModalDelete}

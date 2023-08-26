@@ -10,8 +10,14 @@ function SingUp() {
       <Grid container component="main" sx={{ height: '100vh' }}>
         <DefaultToast />
         <Grid
-          item xs={6}
+          item
+          xs={6}
           sx={{
+            display: {
+              xs: 'none',
+              sm: 'none',
+              md: 'flex'
+            },
             backgroundImage: `url('${SingUpBackground}')`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',

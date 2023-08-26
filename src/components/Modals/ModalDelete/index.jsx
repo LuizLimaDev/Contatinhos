@@ -23,7 +23,11 @@ function ModalDelete({ openModal, handleCloseModal, handleDeleContact, currentCo
         <Paper sx={{
           display: 'flex',
           flexDirection: 'column',
-          width: '494px',
+          width: {
+            xs: '400px',
+            sm: '420px',
+            md: '450px'
+          },
           pb: '75px'
         }}>
           <img

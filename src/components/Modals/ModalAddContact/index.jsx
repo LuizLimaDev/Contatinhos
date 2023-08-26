@@ -28,8 +28,6 @@ function ModalAddContact({ openModal, handleCloseModal, setRows }) {
   };
 
   function handleSetNewUser(e) {
-    //set error vazio - para limar os erros qdo corrigidos
-
     setUser({
       ...user,
       [e.target.name]: e.target.value
@@ -63,8 +61,6 @@ function ModalAddContact({ openModal, handleCloseModal, setRows }) {
   }
 
   function clearForm() {
-    //set error vazio - para limar os erros qdo corrigidos
-
     setUser({
       nome: '',
       telefone: '',
@@ -81,7 +77,11 @@ function ModalAddContact({ openModal, handleCloseModal, setRows }) {
         <Paper sx={{
           display: 'flex',
           flexDirection: 'column',
-          width: '494px',
+          width: {
+            xs: '400px',
+            sm: '420px',
+            md: '450px'
+          },
           pb: '75px'
         }}>
           <img
