@@ -1,7 +1,7 @@
 import { useTheme } from '@emotion/react';
-import { Box, Container, Grid, Link, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLocalStorage } from 'react-use';
 import api from '../../../services/api';
 import ButtonStyled from '../../ButtonStyled';
@@ -115,7 +115,7 @@ function LoginForm() {
           />
           <Typography>
             Não tem cadastro?
-            <Link href="/singup" underline='none'>
+            <Link to="/singup">
               &nbsp;Clique aqui!
             </Link>
           </Typography>

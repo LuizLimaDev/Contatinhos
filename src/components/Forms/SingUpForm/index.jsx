@@ -2,11 +2,11 @@ import { useTheme } from '@emotion/react';
 import {
   Box,
   Container,
-  Grid, Link,
+  Grid,
   Typography
 } from '@mui/material';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import api from '../../../services/api';
 import { nofifySucess, notifyError } from '../../../utils/toast/toast';
 import ButtonStyled from '../../ButtonStyled';
@@ -132,7 +132,7 @@ function SingUpForm() {
           />
           <Typography>
             Já tem cadastro?
-            <Link href="/" underline='none'>
+            <Link to="/" >
               &nbsp;Clique aqui!
             </Link>
           </Typography>
