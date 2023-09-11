@@ -124,7 +124,7 @@ function TabelaContatos() {
                       currentContact={currentContact}
                       setRows={setRows}
                     />
-                    <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                       <img
                         src={editContact}
                         alt="editar contato"
